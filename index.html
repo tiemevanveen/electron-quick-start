@@ -3,15 +3,38 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
+
+    <style>
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #e6e3e3;
+        font: 12px sans-serif;
+      }
+
+      .webviews {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .webview {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    </style>
+
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <div class="webviews">
+      <webview src="login.html" id="webview-app" class="webview" disablewebsecurity></webview>
+    </div>
   </body>
-
   <script>
     // You can also require other files to run in this process
     require('./renderer.js')
